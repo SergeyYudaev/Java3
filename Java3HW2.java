@@ -4,11 +4,11 @@ import java.util.Arrays;
 public class Java3HW2 {
     public static void main(String[] args) {
 
-        Object[] arr = new Object[10];
+        String[] arr = new String[10];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = String.valueOf(i);
         }
-
+        
         // задание 1
         changeArrElem(arr, 3, 9);
 
@@ -37,10 +37,10 @@ public class Java3HW2 {
 
     }
 
-    public static Object[] changeArrElem(Object[] arr, int elem1, int elem2) {
+    private static <T> T[] changeArrElem(T[] arr, int elem1, int elem2) {
         try {
             if (arr != null) {
-                Object tmp = arr[elem1];
+                T tmp = arr[elem1];
                 arr[elem1] = arr[elem2];
                 arr[elem2] = tmp;
             }
@@ -50,8 +50,8 @@ public class Java3HW2 {
         return arr;
     }
 
-    public static ArrayList<Object> arrayToList(Object[] arr) {
-        ArrayList<Object> arrayList = new ArrayList<>(Arrays.asList(arr));
+    private static <E> ArrayList<E> arrayToList(E[] arr) {
+        ArrayList<E> arrayList = new ArrayList<>(Arrays.asList(arr));
         return arrayList;
     }
 
