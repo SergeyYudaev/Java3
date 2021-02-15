@@ -1,15 +1,14 @@
-import com.sun.org.apache.xpath.internal.operations.Or;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Java3HW2 {
     public static void main(String[] args) {
 
-        String[] arr = new String[10];
+        Object[] arr = new Object[10];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = String.valueOf(i);
         }
+
         // задание 1
         changeArrElem(arr, 3, 9);
 
@@ -38,19 +37,21 @@ public class Java3HW2 {
 
     }
 
-    public static String[] changeArrElem(String[] arr, int elem1, int elem2) {
+    public static Object[] changeArrElem(Object[] arr, int elem1, int elem2) {
         try {
-            String tmp = arr[elem1];
-            arr[elem1] = arr[elem2];
-            arr[elem2] = tmp;
+            if (arr != null) {
+                Object tmp = arr[elem1];
+                arr[elem1] = arr[elem2];
+                arr[elem2] = tmp;
+            }
         } catch (ArrayIndexOutOfBoundsException e) {
             e.printStackTrace();
         }
         return arr;
     }
 
-    public static ArrayList<String> arrayToList(String[] arr) {
-        ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(arr));
+    public static ArrayList<Object> arrayToList(Object[] arr) {
+        ArrayList<Object> arrayList = new ArrayList<>(Arrays.asList(arr));
         return arrayList;
     }
 
