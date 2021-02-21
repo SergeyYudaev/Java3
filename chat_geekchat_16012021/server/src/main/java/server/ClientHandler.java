@@ -79,10 +79,10 @@ public class ClientHandler {
                             }
 
                             //Посылает служебное сообщение в Controller
-                            boolean nickChanged = SQLiteAuthService.changeNick(this.nickname, token[1], token[2], token[3]);
+                            boolean nickChanged = SQLiteAuthService.changeNick(token[1], token[2], token[3]);
                             if (nickChanged) {
                                 sendMsg("/никЗбс");
-                            } else {
+                            } else if (!nickChanged) {
                                 sendMsg("/никНеЗбс");
                             }
                         }
