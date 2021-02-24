@@ -150,8 +150,7 @@ public class ClientHandler {
         File file = new File(pathname);
         try {
             if (!file.exists()) {
-                file.getParentFile().mkdirs();
-                file.createNewFile();
+            file.createNewFile();
             }
         } catch (IOException e) {
             e.printStackTrace();
